@@ -46,13 +46,20 @@ public class BookController {
 	
 	
 	
-	@GetMapping(path = "/books/delete/{id}") 
+	@GetMapping(path = "/books/delete/{id}") // id-ye gore delete etmek 
 	public String editBook(@PathVariable(name = "id")Integer id,Model model) {
-		Book book=new Book();
-		model.addAttribute("book", book);
-		System.out.println(id);
+		boolean bookExists=bookDAO.findById(id).isPresent();
+		if (bookExists) {
+			bookDAO.deleteById(id);
+		}
+		else {
+			
+		}
+		List<Book>books=bookDAO.findAll();
+		model.addAttribute("books", books);
 		
-		return "new-book";
+		
+		return "redirect:/books"; 
 	}
 	
 	
