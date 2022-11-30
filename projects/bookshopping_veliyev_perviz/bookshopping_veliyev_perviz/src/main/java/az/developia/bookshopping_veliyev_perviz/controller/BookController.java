@@ -34,9 +34,11 @@ public class BookController {
 	} 
 	@PostMapping(path = "/books/new-book-process") // Qeydiyat etdikden sonra datanin bazaya atilmasi
 	 public String saveBook(@ModelAttribute(name = "book")Book book,Model model) {
+		book.setImage("book.jpg");
+		book.setUserName("dea");
+		bookDAO.save(book);
 		List<Book>books=bookDAO.findAll();
 		model.addAttribute("books", books);
-			bookDAO.save(book);
 			return "books";
 		}
 	
