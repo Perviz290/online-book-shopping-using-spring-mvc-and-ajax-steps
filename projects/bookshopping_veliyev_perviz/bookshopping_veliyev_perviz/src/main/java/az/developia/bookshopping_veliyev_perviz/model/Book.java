@@ -14,6 +14,7 @@ public class Book {
 	private Integer id;
 	private String name;
 	private String description;
+	private Double price;
 	
 	// Get and Set Methods
 	public Integer getId() {
@@ -34,6 +35,14 @@ public class Book {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	
+	
 	
 
 	
