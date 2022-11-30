@@ -4,18 +4,27 @@
 <title>Kitablar</title>
 <style >
 table,th,td{
-border:1px solid black;}
+border:3px solid green;}
 table{border-collapse: collapse;width:100%;}
+th{padding:5px;}
+td{padding:5px;background-color: black;color:white;}
+td:hover{color:blue;cursor: pointer;}
+#new-book-button{display: block;padding: 5px 10px;
+background-color: rgb(144, 217, 71); width: 150px;text-align: center;
+border-radius: 10px; text-decoration: none;}
+#new-book-button{background-color: rgb(143, 174, 11);cursor: pointer;}
 </style>
 </head>
-<body>
-
+<body>    
+<a th:href="@{/books/new}"id="new-book-button">Yeni Kitab</a>
 <table>
-<thead><tr><th>ID</th><th>Name</th></tr></thead>
+<thead><tr><th>ID</th><th>AD</th><th>Təsvir</th></tr></thead>
 <tbody>
 <tr th:each="book : ${books}">
 <td th:text="${book.id}"></td>
 <td th:text="${book.name}"></td>
+<td th:text="${book.description}"></td>
+
 </tr>
 
 </tbody>
