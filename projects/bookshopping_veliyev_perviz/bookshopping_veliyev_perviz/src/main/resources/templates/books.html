@@ -53,7 +53,8 @@ $('#books-table').DataTable();
 <td th:text="${book.pageCount}"></td>
 <td th:text="${book.Image}"></td>
 <td><a th:href="@{/books/delete/{id}(id=${book.id})}" class="btn btn-danger">Delete</a>
-<a class="btn btn-primary" >Edit</a>
+<td><a th:href="@{/books/edit/{id}(id=${book.id})}" class="btn btn-primary">Edit</a>
+
 </td>
 </tr>
 
