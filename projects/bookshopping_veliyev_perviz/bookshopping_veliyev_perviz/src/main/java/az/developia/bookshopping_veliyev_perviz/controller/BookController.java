@@ -32,6 +32,7 @@ public class BookController {
 	public String openNewBookPage(Model model) {
 		Book book=new Book();
 		model.addAttribute("book", book);
+		model.addAttribute("header", "Yeni Kitab");
 		return "new-book";
 	} 
 	@PostMapping(path = "/books/new-book-process") // Qeydiyat etdikden sonra datanin bazaya atilmasi
@@ -75,7 +76,7 @@ public class BookController {
 			
 		}
 		model.addAttribute("book", book);
-		
+		model.addAttribute("header", "Kitab redaktesi");
 		
 		return "new-book"; 
 	}
