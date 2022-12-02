@@ -11,30 +11,25 @@ table{border-collapse: collapse;width:100%;}
 th{padding:5px;}
 td{padding:5px;background-color: black;color:white;}
 td:hover{color:blue;cursor: pointer;}
-#new-book-button{display: block;padding: 5px 10px;
-background-color: rgb(144, 217, 71); width: 150px;text-align: center;
-border-radius: 10px; text-decoration: none;}
-#new-book-button{background-color: rgb(143, 174, 11);cursor: pointer;}
-a{margin-right:5px;}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 <link rel="stylesheet" type="text/css"
 href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
-
 <script type="text/javascript" charset="utf8"
 src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
-
 <script>
 $(document).ready(function() {
 $('#books-table').DataTable();
 });
 </script>
 </head>
-<body>  
+<body>
 <div th:replace="menu :: menu" ></div>  
-<a th:href="@{/books/new}"id="new-book-button">Yeni Kitab</a>
-<a th:href="@{/home}">Əsas səhife</a>
+<div class="container-fluid">
+
+<a class="btn btn-success" th:href="@{/books/new}">Yeni Kitab</a>
+<a class="btn btn-primary" th:href="@{/home}">Əsas səhife</a>
+<div style="height: 5px;"></div>
 <table id="books-table">
 <thead><tr><th>ID</th>
 <th>AD</th>
@@ -64,6 +59,8 @@ $('#books-table').DataTable();
 </tbody>
 
 </table>
+</div>
+
 
 </body>
 </html>
