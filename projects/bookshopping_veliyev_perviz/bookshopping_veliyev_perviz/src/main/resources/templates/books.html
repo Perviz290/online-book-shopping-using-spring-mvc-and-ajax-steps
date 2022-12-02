@@ -9,7 +9,7 @@ table,th,td{
 border:3px solid green;}
 table{border-collapse: collapse;width:100%;}
 th{padding:5px;}
-td{padding:5px;background-color: black;color:white;}
+td{padding:5px;color:black;}
 td:hover{color:blue;cursor: pointer;}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -29,7 +29,7 @@ $('#books-table').DataTable();
 
 <a class="btn btn-success" th:href="@{/books/new}">Yeni Kitab</a>
 <a class="btn btn-primary" th:href="@{/home}">Əsas səhife</a>
-<div style="height: 5px;"></div>
+<div style="height : 5px;"></div>
 <table id="books-table">
 <thead><tr><th>ID</th>
 <th>AD</th>
