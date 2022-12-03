@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <title th:text="${header}">Yeni Kitab</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<style> #book-register-form{width:300px;margin:auto;} </style>
+<style> #book-register-form{width:300px;margin:auto;} 
+.error-message{color:red;}</style>
 
 </head>
 <body>
@@ -15,19 +16,24 @@
 <input th:field="*{id}" type="hidden">
 
 <div class="form-group"><label for="book-name">Name-</label>
-<input class="from-control" id="book-name" th:field="*{name}" /></div>
+<input class="from-control" id="book-name" th:field="*{name}" />
+<span class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span></div>
 
 <div class="form-group"><label for="book-description">Description-</label>
-<textarea class="from-control" id="book-description" th:field="*{description}"></textarea></div>
+<textarea class="from-control" id="book-description" th:field="*{description}"></textarea>
+<span class="error-message" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span></div>
 
 <div class="form-group"><label for="book-price">Price-</label>
-<input class="from-control" type="number" id="book-price" th:field="*{price}" /></div>
+<input class="from-control" type="number" id="book-price" th:field="*{price}" />
+<span class="error-message" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span></div>
 
 <div class="form-group"><label for="book-author">Author-</label>
-<input class="from-control" id="book-author" th:field="*{author}" /></div>
+<input class="from-control" id="book-author" th:field="*{author}" />
+<span class="error-message" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span></div>
 
 <div class="form-group"><label for="book-page-count">Page-Count-</label>
-<input class="from-control" type="number" id="book-page-count" th:field="*{pageCount}" /></div>
+<input class="from-control" type="number" id="book-page-count" th:field="*{pageCount}" />
+<span class="error-message" th:if="${#fields.hasErrors('pageCount')}" th:errors="*{pageCount}"></span></div>
 
 <input class="btn btn-success" type="submit" value="Yadda Saxla" />
 
