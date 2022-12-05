@@ -10,6 +10,5 @@ public class BookshoppingVeliyevPervizApplication {
 		SpringApplication.run(BookshoppingVeliyevPervizApplication.class, args);
 	}
 
-	//44 e kimi geldik  
-	
+		
 }
