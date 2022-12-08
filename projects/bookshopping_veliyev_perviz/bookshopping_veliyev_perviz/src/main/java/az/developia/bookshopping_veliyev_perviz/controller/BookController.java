@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import az.developia.bookshopping_veliyev_perviz.config.MySession;
 import az.developia.bookshopping_veliyev_perviz.dao.BookDAO;
 import az.developia.bookshopping_veliyev_perviz.model.Book;
 
@@ -22,6 +23,9 @@ public class BookController {
 	
 	@Autowired
 	BookDAO bookDAO;
+	@Autowired
+	MySession mySession;
+	
 	
 	@GetMapping(path = "/books")  //Bazadan melumati goturub. thymeleaf fastesi ile cedvelde yerlesdirmek
 	public String showBooks(Model model) {
@@ -44,7 +48,7 @@ public class BookController {
 			return "new-book";
 		}
 		book.setImage("book.jpg");
-		book.setUserName("dea");
+		book.setUserName(mySession.getUsername());
 		bookDAO.save(book);
 		List<Book>books=bookDAO.findAll();
 		model.addAttribute("books", books);
