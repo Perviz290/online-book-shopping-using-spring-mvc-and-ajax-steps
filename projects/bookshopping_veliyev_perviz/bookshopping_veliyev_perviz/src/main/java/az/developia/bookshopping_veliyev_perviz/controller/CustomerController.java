@@ -16,10 +16,10 @@ import az.developia.bookshopping_veliyev_perviz.model.Book;
 public class CustomerController {
 	
 	@Autowired
-	BookDAO bookDAO;
+	private BookDAO bookDAO;
 	
 	@Autowired
-	MySession mySession;
+	private MySession mySession;
 	
 	
 

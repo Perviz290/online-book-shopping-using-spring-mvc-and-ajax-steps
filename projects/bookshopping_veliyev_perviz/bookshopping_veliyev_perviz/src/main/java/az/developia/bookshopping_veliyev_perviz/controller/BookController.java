@@ -22,14 +22,15 @@ import az.developia.bookshopping_veliyev_perviz.model.Book;
 public class BookController {
 	
 	@Autowired
-	BookDAO bookDAO;
+	private BookDAO bookDAO;
 	@Autowired
-	MySession mySession;
+	private MySession mySession;
 	
 	
 	@GetMapping(path = "/books")  //Bazadan melumati goturub. thymeleaf fastesi ile cedvelde yerlesdirmek
 	public String showBooks(Model model) {
-		List<Book>books=bookDAO.findAll();
+		//List<Book>books=bookDAO.findAll();
+		List<Book>books=bookDAO.findAllByUsername(mySession.getUsername());  // User-e gore book cedvelini gostermek 
 		model.addAttribute("books", books);
 		return "books";
 	} 

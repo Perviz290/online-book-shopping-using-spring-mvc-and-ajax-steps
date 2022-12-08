@@ -29,10 +29,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
 	auth.jdbcAuthentication().dataSource(dataSource);
 	}
 	
-	
-	
-	
-	
 	}
 	
 	

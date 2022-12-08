@@ -8,13 +8,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class MySession {  // Spring bu sinifden obyekt yaratadac 
-	// ve her defe login olan-da ise dusecek logout olana qeder 
+public class MySession {  // Eger girib userlerin hansi kitab qeydiyyati etdiyini bilmek ucun istifade olunur 
 	
 	private String username;
 	
 	public MySession() {
-		System.out.println("mySession contructor");
+		System.out.println("MySession-contructor");
 		Authentication loggedinUser=SecurityContextHolder.getContext().getAuthentication();
 		String username=loggedinUser.getName();
 		this.username=username;
