@@ -24,6 +24,7 @@ public class Book {
 	@Column(columnDefinition = "VARCHAR(50)")
 	private String name;
 	
+	@Column(columnDefinition = "VARCHAR(500)")
 	private String description;
 	
 	@Min(value =0,message = "Minimum 0 yazmaq olar")
