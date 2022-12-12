@@ -39,7 +39,7 @@ public class Book {
 	private String pageCount;
 	
 	private String image;
-	private String userName; 
+	private String username; 
 	
 	// Get and Set Methods
 	public Integer getId() {
@@ -84,11 +84,11 @@ public class Book {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	

@@ -49,7 +49,7 @@ public class BookController {
 			return "new-book";
 		}
 		book.setImage("book.jpg");
-		book.setUserName(mySession.getUsername());
+		book.setUsername(mySession.getUsername());
 		bookDAO.save(book);
 		List<Book>books=bookDAO.findAll();
 		model.addAttribute("books", books);
