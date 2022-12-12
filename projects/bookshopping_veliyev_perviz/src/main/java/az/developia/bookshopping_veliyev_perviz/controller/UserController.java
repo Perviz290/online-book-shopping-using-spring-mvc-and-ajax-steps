@@ -18,7 +18,7 @@ import az.developia.bookshopping_veliyev_perviz.model.User;
 public class UserController {
 
 	@GetMapping(path = "/show-login")
-	public String showLoginPage() {
+	public String showLoginPage(Model model) {
 		
 		return "my-custom-login";
 	}
@@ -36,8 +36,8 @@ public class UserController {
 			return "create-account";
 		}
 		System.out.println(user);
-	
-			return "redirect:/show-user";
+	model.addAttribute("userCreated", "");
+			return "my-custom-login";
 		}
 	
 
