@@ -16,10 +16,15 @@ import az.developia.bookshopping_veliyev_perviz.model.User;
 
 @Controller
 public class UserController {
+	
+private boolean userCreated=false;
 
 	@GetMapping(path = "/show-login")
 	public String showLoginPage(Model model) {
-		
+		if (userCreated) {
+			model.addAttribute("userCreated", "");
+		}
+		userCreated=false;
 		return "my-custom-login";
 	}
 	
@@ -36,8 +41,8 @@ public class UserController {
 			return "create-account";
 		}
 		System.out.println(user);
-	model.addAttribute("userCreated", "");
-			return "my-custom-login";
+		userCreated=true;
+			return "redirect:/show-login"; 
 		}
 	
 
